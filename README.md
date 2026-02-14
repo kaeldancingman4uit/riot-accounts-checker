@@ -38,4 +38,5 @@ Notes
     Credentials must be in username:password format.
 
     The tool uses Riot's authentication API and requires an active internet connection.
+
  
