@@ -9,7 +9,7 @@ It supports checking a single account directly from the command line or bulk-che
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/riot-accounts-checker.git
+git clone https://github.com/kaeldancingman4uit/riot-accounts-checker.git
 cd riot-accounts-checker
 ```
 Install dependencies:
