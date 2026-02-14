@@ -1,26 +1,20 @@
-name: Subtle Update
-
+name: Sync
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
-
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Tiny change in README
-        run: |
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - run: |
           sed -i '$ s/ $//' README.md
           echo " " >> README.md
-          
-      - name: Commit and Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "docs: minor update"
-          git push
+          git commit -m "update"
+          git push origin main
